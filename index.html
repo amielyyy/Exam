@@ -78,13 +78,28 @@
     <section class="hero d-flex align-items-center" id="hero">
       <div class="container">
         <h1>Sherze Kalbands</h1>
-        <p class="lead">Feel the rhythm. Live the beat.</p>
+        <p class="lead"><i>Feel the rhythm. Live the beat.</i></p>
         <a href="#music" class="btn btn-primary btn-lg mt-3">Listen Now</a>
+        <style>
+          .hero .btn-primary {
+            transition: background-color 0.3s ease, transform 0.3s ease;
+          }
+
+          .hero .btn-primary:hover {
+            background-color: #0056b3; /* Darker blue */
+            transform: scale(1.05); /* Slight zoom effect */
+            color: white;
+          }
+        </style>
       </div>
     </section>
 
     <!-- Tour Dates -->
-    <section id="tour" class="section-padding bg-light">
+    <section
+      id="music"
+      class="section-padding"
+      style="background: linear-gradient(to bottom, white, grey)"
+    >
       <div class="container">
         <h2 class="text-center mb-4">Tour Dates</h2>
         <div class="row">
@@ -120,7 +135,14 @@
     </section>
 
     <!-- Bio Section -->
-    <section id="bio" class="section-padding">
+    <section
+      id="bio"
+      class="section-padding"
+      style="
+        background: linear-gradient(to right, #2193b0, #ff758c);
+        color: white;
+      "
+    >
       <div class="container">
         <h2 class="text-center mb-4">About Sherze Kalbands</h2>
         <div class="row justify-content-center">
@@ -137,7 +159,11 @@
     </section>
 
     <!-- Music Carousel Section -->
-    <section id="music" class="section-padding bg-light">
+    <section
+      id="music"
+      class="section-padding"
+      style="background: linear-gradient(to right, #f0f0f0, #d3d3d3)"
+    >
       <div class="container">
         <h2 class="text-center mb-4">Music</h2>
         <div
