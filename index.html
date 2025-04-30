@@ -9,6 +9,11 @@
       rel="stylesheet"
     />
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Hero Section */
       .hero {
         background: url("https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1350&q=80")
           no-repeat center center;
@@ -26,12 +31,54 @@
         color: black;
         text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
           1px 1px 0 #fff;
+        font-family: "Arial", sans-serif;
       }
 
       .hero h1 {
         font-size: 4rem;
       }
 
+      .hero h1 span {
+        display: inline-block;
+        animation: jump 0.5s ease infinite alternate;
+        opacity: 0;
+      }
+
+      .hero h1 span:nth-child(odd) {
+        animation-delay: 0.1s;
+      }
+
+      .hero h1 span:nth-child(even) {
+        animation-delay: 0.2s;
+      }
+
+      @keyframes jump {
+        0% {
+          transform: translateY(0);
+          opacity: 0.6;
+        }
+        100% {
+          transform: translateY(-10px);
+          opacity: 1;
+        }
+      }
+
+      /* Button Hover Effect */
+      .hero .btn-primary,
+      .carousel .btn,
+      footer .btn {
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .hero .btn-primary:hover,
+      .carousel .btn:hover,
+      footer .btn:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+        color: white;
+      }
+
+      /* Tour Section */
       .section-padding {
         padding: 60px 0;
       }
@@ -41,8 +88,18 @@
         color: white;
         padding: 20px 0;
       }
+
+      /* Scroll Effect */
+      .btn {
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .navbar-toggler-icon {
+        color: #fff;
+      }
     </style>
   </head>
+
   <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
     <!-- Navbar -->
     <nav
@@ -77,26 +134,20 @@
     <!-- Hero Section -->
     <section class="hero d-flex align-items-center" id="hero">
       <div class="container">
-        <h1>Sherze Kalbands</h1>
+        <h1>
+          <span>S</span><span>h</span><span>e</span><span>r</span><span>z</span
+          ><span>e</span> <span>K</span><span>a</span><span>l</span
+          ><span>b</span><span>a</span><span>n</span><span>d</span
+          ><span>s</span>
+        </h1>
         <p class="lead"><i>Feel the rhythm. Live the beat.</i></p>
         <a href="#music" class="btn btn-primary btn-lg mt-3">Listen Now</a>
-        <style>
-          .hero .btn-primary {
-            transition: background-color 0.3s ease, transform 0.3s ease;
-          }
-
-          .hero .btn-primary:hover {
-            background-color: #0056b3; /* Darker blue */
-            transform: scale(1.05); /* Slight zoom effect */
-            color: white;
-          }
-        </style>
       </div>
     </section>
 
     <!-- Tour Dates -->
     <section
-      id="music"
+      id="tour"
       class="section-padding"
       style="background: linear-gradient(to bottom, white, grey)"
     >
@@ -206,7 +257,6 @@
           >
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
-            <span class="btn btn-dark ms-2">Previous</span>
           </button>
           <button
             class="carousel-control-next"
@@ -216,45 +266,8 @@
           >
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
-            <span class="btn btn-dark ms-2">Next</span>
           </button>
         </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section-padding">
-      <div class="container">
-        <h2 class="text-center mb-4">Contact</h2>
-        <form class="row g-3 justify-content-center">
-          <div class="col-md-6">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Your Name"
-              required
-            />
-          </div>
-          <div class="col-md-6">
-            <input
-              type="email"
-              class="form-control"
-              placeholder="Your Email"
-              required
-            />
-          </div>
-          <div class="col-12">
-            <textarea
-              class="form-control"
-              rows="4"
-              placeholder="Your Message"
-              required
-            ></textarea>
-          </div>
-          <div class="col-12 text-center">
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </div>
-        </form>
       </div>
     </section>
 
